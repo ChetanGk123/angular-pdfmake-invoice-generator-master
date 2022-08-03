@@ -7,19 +7,18 @@ import { FeVoucherComponent } from './feVoucher/feVoucher.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TcComponent } from './tc/tc.component';
 import { AdmissionFormComponent } from './admission-form/admission-form.component';
+import { MessNewMembershipComponent } from './mess-new-membership/mess-new-membership.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-      FeVoucherComponent,
-      TcComponent,
-      AdmissionFormComponent
-   ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    FormsModule
+    FeVoucherComponent,
+    TcComponent,
+    AdmissionFormComponent,
+    MessNewMembershipComponent,
   ],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
