@@ -6,11 +6,11 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
-  selector: 'app-mess-new-membership',
-  templateUrl: './mess-new-membership.component.html',
-  styleUrls: ['./mess-new-membership.component.css'],
+  selector: 'app-tocken',
+  templateUrl: './tocken.component.html',
+  styleUrls: ['./tocken.component.css'],
 })
-export class MessNewMembershipComponent implements OnInit {
+export class TockenComponent implements OnInit {
   src: any;
   logo: any;
   loading: boolean = false;
@@ -102,23 +102,23 @@ export class MessNewMembershipComponent implements OnInit {
         },
         {
           table: {
-            widths: [1, 'auto', 28, 18, '*'],
+            widths: [1, 'auto', 25, 12, '*'],
             body: [
               [
                 {
                   text: '#',
                 },
                 {
-                  text: 'Particular',
+                  text: 'Item',
                 },
                 {
-                  text: 'Rate',
+                  text: 'Price',
                 },
                 {
-                  text: 'Days',
+                  text: 'Qty',
                 },
                 {
-                  text: 'Start',
+                  text: 'Amount',
                 },
               ],
               [
@@ -129,43 +129,26 @@ export class MessNewMembershipComponent implements OnInit {
                   text: '15 DAYS FULL MESS',
                 },
                 {
-                  text: '2200.00',
+                  text: '200.00',
                 },
                 {
-                  text: '15',
+                  text: '999',
                 },
                 {
-                  text: '03-02-2021',
+                  text: '2021',
                 },
               ],
               [
                 {
-                  text: 'BREAKFEASK, LUNCH, SNACKS, DINNER',
-                  colSpan: 5,
-                  fontSize: 7,
+                  text: '#',
+                },
+                {
+                  text: 'Total',
                 },
                 {},
-                {},
-                {},
-                {},
+                { text: '999' },
+                { text: '2021' },
               ],
-              // [
-              //   {
-              //     text: '#',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: 'Previous Balance',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: '0.00',
-              //     colSpan: 3,
-              //     border: [false, true, false, true],
-              //   },
-              //   {},
-              //   {},
-              // ],
               // [
               //   {
               //     text: '#',

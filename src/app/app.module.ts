@@ -9,6 +9,7 @@ import { TcComponent } from './tc/tc.component';
 import { AdmissionFormComponent } from './admission-form/admission-form.component';
 import { MessNewMembershipComponent } from './mess-new-membership/mess-new-membership.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TockenComponent } from './tocken/tocken.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     TcComponent,
     AdmissionFormComponent,
     MessNewMembershipComponent,
+    TockenComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule],
   providers: [],

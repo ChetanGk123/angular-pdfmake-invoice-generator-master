@@ -4,6 +4,7 @@ import { AdmissionFormComponent } from './admission-form/admission-form.componen
 import { FeVoucherComponent } from './feVoucher/feVoucher.component';
 import { MessNewMembershipComponent } from './mess-new-membership/mess-new-membership.component';
 import { TcComponent } from './tc/tc.component';
+import { TockenComponent } from './tocken/tocken.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'feeVoucher',
     component: FeVoucherComponent,
+  },
+  {
+    path: 'tocken',
+    component: TockenComponent,
   },
   {
     path: 'admissionForm',
