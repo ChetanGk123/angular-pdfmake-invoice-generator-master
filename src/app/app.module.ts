@@ -10,6 +10,7 @@ import { AdmissionFormComponent } from './admission-form/admission-form.componen
 import { MessNewMembershipComponent } from './mess-new-membership/mess-new-membership.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TockenComponent } from './tocken/tocken.component';
+import { BonofiedCertificateComponent } from './bonofied-certificate/bonofied-certificate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { TockenComponent } from './tocken/tocken.component';
     AdmissionFormComponent,
     MessNewMembershipComponent,
     TockenComponent,
+    BonofiedCertificateComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, FormsModule, HttpClientModule],
   providers: [],

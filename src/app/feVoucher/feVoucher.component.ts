@@ -262,16 +262,20 @@ export class FeVoucherComponent implements OnInit {
     this.pdfData = this.data['txn_res'];
     this.student = this.data['student_data'];
     this.academic_data = this.data['account_data'];
-    this.feeData = this.data1
-    for (let i = this.feeData.length; i < 8; i++){
-        this.dummyData.push("a")
+    this.feeData = this.data1;
+    for (let i = this.feeData.length; i < 8; i++) {
+      this.dummyData.push('a');
     }
 
     this.generatePDF('open');
   }
 
   generatePDF(action = 'open') {
-    let totalBalance = this.feeData.reduce((sum, current)=> sum + (Number(current.total_fees)- Number(current.fee_balance)),0)
+    let totalBalance = this.feeData.reduce(
+      (sum, current) =>
+        sum + (Number(current.total_fees) - Number(current.fee_balance)),
+      0
+    );
     let docDefinition = {
       pageOrientation: 'landscape',
       pageSize: 'A4',
@@ -452,20 +456,45 @@ export class FeVoucherComponent implements OnInit {
                                   widths: ['auto', '*', 'auto'],
                                   body: [
                                     ['Sl No', 'Particulars', 'Amount'],
-                                    ...this.feeData.map((p)=>[
-                                      {text:this.feeData.indexOf(p)+1, border: [true, false, true, false],},
-                                      {text:p.fee_group_name, border: [true, false, true, false],},
-                                      {text:(Number(p.total_fees)-Number(p.fee_balance)).toFixed(2), border: [true, false, true, false],alignment:"right"},
+                                    ...this.feeData.map((p) => [
+                                      {
+                                        text: this.feeData.indexOf(p) + 1,
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: p.fee_group_name,
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: (
+                                          Number(p.total_fees) -
+                                          Number(p.fee_balance)
+                                        ).toFixed(2),
+                                        border: [true, false, true, false],
+                                        alignment: 'right',
+                                      },
                                     ]),
-                                    ...this.dummyData.map(()=>[
-                                      {text:" ",border: [true, false, true, false]},
-                                      {text:" ",border: [true, false, true, false]},
-                                      {text:" ",border: [true, false, true, false]},
+                                    ...this.dummyData.map(() => [
+                                      {
+                                        text: ' ',
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: ' ',
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: ' ',
+                                        border: [true, false, true, false],
+                                      },
                                     ]),
                                     [
                                       { text: 'Total Paid', colSpan: 2 },
                                       {},
-                                      {text:totalBalance.toFixed(2),alignment:"right",}
+                                      {
+                                        text: totalBalance.toFixed(2),
+                                        alignment: 'right',
+                                      },
                                     ],
                                   ],
                                 },
@@ -683,20 +712,45 @@ export class FeVoucherComponent implements OnInit {
                                   widths: ['auto', '*', 'auto'],
                                   body: [
                                     ['Sl No', 'Particulars', 'Amount'],
-                                    ...this.feeData.map((p)=>[
-                                      {text:this.feeData.indexOf(p)+1, border: [true, false, true, false],},
-                                      {text:p.fee_group_name, border: [true, false, true, false],},
-                                      {text:(Number(p.total_fees)-Number(p.fee_balance)).toFixed(2), border: [true, false, true, false],alignment:"right"},
+                                    ...this.feeData.map((p) => [
+                                      {
+                                        text: this.feeData.indexOf(p) + 1,
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: p.fee_group_name,
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: (
+                                          Number(p.total_fees) -
+                                          Number(p.fee_balance)
+                                        ).toFixed(2),
+                                        border: [true, false, true, false],
+                                        alignment: 'right',
+                                      },
                                     ]),
-                                    ...this.dummyData.map(()=>[
-                                      {text:" ",border: [true, false, true, false]},
-                                      {text:" ",border: [true, false, true, false]},
-                                      {text:" ",border: [true, false, true, false]},
+                                    ...this.dummyData.map(() => [
+                                      {
+                                        text: ' ',
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: ' ',
+                                        border: [true, false, true, false],
+                                      },
+                                      {
+                                        text: ' ',
+                                        border: [true, false, true, false],
+                                      },
                                     ]),
                                     [
                                       { text: 'Total Paid', colSpan: 2 },
                                       {},
-                                      {text:totalBalance.toFixed(2),alignment:"right",}
+                                      {
+                                        text: totalBalance.toFixed(2),
+                                        alignment: 'right',
+                                      },
                                     ],
                                   ],
                                 },

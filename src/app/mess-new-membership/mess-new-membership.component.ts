@@ -28,229 +28,315 @@ export class MessNewMembershipComponent implements OnInit {
   }
   async generatePDF(action = 'open') {
     let docDefinition = {
-      //pageSize: 'A4',
-      pageSize: {
-        width: 160,
-        height: 'auto',
-      },
+      pageSize: 'A4',
+      pageMargins: [0, 10, 0, 10],
       defaultStyle: {
-        fontSize: 7,
+        fontSize: 10,
       },
-      pageMargins: [2, 10, 2, 10],
       content: [
         {
-          columns: [
-            [
-              {
-                columns: [
-                  {},
-                  {
-                    image: this.logo,
-                    width: 60,
-                    height: 60,
-                    alignment: 'center',
-                  },
-                  {},
-                ],
-              },
-              {
-                text: 'HAPPY PLATES',
-                fontSize: 15,
-                margin: [0, 5, 0, 0],
-                bold: true,
-                alignment: 'center',
-              },
-              {
-                text: 'FC GROUND FLOOR',
-                fontSize: 8,
-                margin: [0, 2, 0, 0],
-                alignment: 'center',
-              },
-              {
-                text: 'Sanjay Ghodawat University',
-                fontSize: 8,
-                margin: [0, 2, 0, 0],
-                alignment: 'center',
-              },
-              {
-                text: '90111633330006',
-                fontSize: 8,
-                margin: [0, 2, 0, 0],
-                alignment: 'center',
-              },
-            ],
-          ],
-        },
-        {
-          columns: [
-            [
-              {
-                text: 'MMTHMB882852783',
-                alignment: 'left',
-                fontSize: 7,
-              },
-            ],
-            [
-              {
-                text: '03-Aug-22 10:17:17 PM',
-                alignment: 'right',
-                fontSize: 7,
-              },
-            ],
-          ],
-          margin: [0, 10, 0, 0],
-        },
-        {
           table: {
-            widths: [1, 'auto', 28, 18, '*'],
+            widths: ['*', '*', '*'],
             body: [
               [
                 {
-                  text: '#',
-                },
-                {
-                  text: 'Particular',
-                },
-                {
-                  text: 'Rate',
-                },
-                {
-                  text: 'Days',
-                },
-                {
-                  text: 'Start',
+                  table: {
+                    widths: ['*'],
+                    body: [
+                      [
+                        {
+                          columns: [
+                            [
+                              {
+                                columns: [
+                                  {
+                                    image: 'logo',
+                                    width: 50,
+                                    height: 50,
+                                    alignment: 'left',
+                                  },
+                                  {
+                                    columns: [
+                                      [
+                                        {
+                                          text: 'Happy Plates',
+                                          fontSize: 11,
+                                          margin: [0, 0, 0, 0],
+                                          bold: false,
+                                          alignment: 'center',
+                                        },
+                                        {
+                                          text: 'Royal Mess',
+                                          fontSize: 18,
+                                          margin: [0, 0, 0, 0],
+                                          bold: true,
+                                          alignment: 'center',
+                                        },
+                                      ],
+                                    ],
+                                    alignment: 'left',
+                                    margin: [0, 0],
+                                  },
+                                ],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Mob No : 9480644248',
+                                      alignment: 'center',
+                                      fontSize: 10,
+                                    },
+                                  ],
+                                ],
+                                margin: [45, -10, 0, 0],
+                                alignment: 'center',
+                              },
+                            ],
+                          ],
+                          border: [false, false, false, false],
+                        },
+                      ],
+                      [
+                        {
+                          columns: [
+                            [
+                              {
+                                text: 'Date: ' + new Date().toDateString(),
+                                alignment: 'right',
+                              },
+                            ],
+                          ],
+                          lineHeight: 1.2,
+                          border: [false, false, false, true],
+                        },
+                      ],
+                      [
+                        {
+                          columns: [
+                            [
+                              {
+                                text: 'Member Details',
+                                bold: true,
+                                fontSize: 16,
+                                decoration: 'underline',
+                                alignment: 'center',
+                                margin: [0, 2, 0, 2],
+                              },
+                              {
+                                text: `Name: Chetan Govindaraju Khajjidoni`,
+                                alignment: 'center',
+                                bold: true,
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Phone No: ',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `987654321`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Card No:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `987654321`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Balance:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `₹ 800.00`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Gender:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `Male`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                            ],
+                          ],
+                          // margin: [left, top, right, bottom]
+                          margin: [10, 0, 10, 10],
+                          border: [false, false, false, true],
+                        },
+                      ],
+                      [
+                        {
+                          columns: [
+                            [
+                              {
+                                text: 'Membership Details',
+                                bold: true,
+                                fontSize: 16,
+                                decoration: 'underline',
+                                alignment: 'center',
+                                margin: [0, 5, 0, 5],
+                              },
+                              {
+                                text: `Name: Daily Combo`,
+                                alignment: 'center',
+                                bold: true,
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Membership No:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `654646464644`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Contents: ',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `Breakfeast, Lunch, Snacks, Dinner`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Days:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `30`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Start Date:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `12-12-1996`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'End Date:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `12-12-1663`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                              {
+                                columns: [
+                                  [
+                                    {
+                                      text: 'Price:',
+                                    },
+                                  ],
+                                  [
+                                    {
+                                      text: `₹ 5000.00`,
+                                    },
+                                  ],
+                                ],
+                                margin: [0, 5, 0, 0],
+                              },
+                            ],
+                          ],
+                          // margin: [left, top, right, bottom]
+                          margin: [10, 0, 10, 0],
+                          border: [false, false, false, true],
+                        },
+                      ],
+                    ],
+                  },
+                  // margin: [left, top, right, bottom]
+                  margin: [5, 10, 5, 10],
                 },
               ],
-              [
-                {
-                  text: '1',
-                },
-                {
-                  text: '15 DAYS FULL MESS',
-                },
-                {
-                  text: '2200.00',
-                },
-                {
-                  text: '15',
-                },
-                {
-                  text: '03-02-2021',
-                },
-              ],
-              [
-                {
-                  text: 'BREAKFEASK, LUNCH, SNACKS, DINNER',
-                  colSpan: 5,
-                  fontSize: 7,
-                },
-                {},
-                {},
-                {},
-                {},
-              ],
-              // [
-              //   {
-              //     text: '#',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: 'Previous Balance',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: '0.00',
-              //     colSpan: 3,
-              //     border: [false, true, false, true],
-              //   },
-              //   {},
-              //   {},
-              // ],
-              // [
-              //   {
-              //     text: '#',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: 'Net Payable',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: '2200.00',
-              //     colSpan: 3,
-              //     border: [false, true, false, true],
-              //   },
-              //   {},
-              //   {},
-              // ],
-              // [
-              //   {
-              //     text: '#',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: 'Paid',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: '0.00',
-              //     colSpan: 3,
-              //     border: [false, true, false, true],
-              //   },
-              //   {},
-              //   {},
-              // ],
-              // [
-              //   {
-              //     text: '#',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: 'Balance',
-              //     border: [false, true, false, true],
-              //   },
-              //   {
-              //     text: '0.00',
-              //     colSpan: 3,
-              //     border: [false, true, false, true],
-              //   },
-              //   {},
-              //   {},
-              // ],
             ],
+            borders: [true, false, false, false],
           },
           layout: {
             vLineWidth: function (i, node) {
-              return i === 0 || i === node.table.widths.length ? 0 : 0;
-            },
-            vLineStyle: function (i, node) {
-              return { dash: { length: 0 } };
+              return i === 0 || i === node.table.widths.length ? 0 : 1;
             },
             hLineWidth: function (i, node) {
-              return i === 0 || i === node.table.widths.length ? 1 : 1;
+              return i === 0 || i === node.table.widths.length ? 0 : 0;
             },
-            hLineStyle: function (i, node) {
-              return { dash: { length: 2 } };
+
+            vLineColor: function (i, node) {
+              return 'black';
+            },
+
+            vLineStyle: function (i, node) {
+              if (i === 0 || i === node.table.widths.length) {
+                return null;
+              }
+              return { dash: { length: 10 } };
             },
           },
-        },
-        {
-          columns: [
-            [
-              {
-                text: 'Thank you, visit again!',
-                fontSize: 8,
-                margin: [0, 2, 0, 0],
-                alignment: 'center',
-              },
-              {
-                text: 'Software by: The Techvaidya 7447553739',
-                fontSize: 8,
-                margin: [0, 2, 0, 0],
-                alignment: 'center',
-              },
-            ],
-          ],
         },
       ],
       images: {
