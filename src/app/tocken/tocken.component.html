@@ -1,2 +1,13 @@
+<select
+  name="cars"
+  id="cars"
+  [(ngModel)]="selectedValue"
+  (change)="generatePDF()"
+>
+  <option *ngFor="let oneOption of countries" [ngValue]="oneOption">
+    {{ oneOption }}
+  </option>
+</select>
+<input type="number" name="age" (change)="generatePDF()" [(ngModel)]="size" />
 <iframe *ngIf="src && !loading" [src]="src" width="100%" height="730"></iframe>
 <span *ngIf="loading">Loading...</span>
